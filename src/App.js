@@ -1,29 +1,34 @@
 import React from 'react';
-// import React, {Conponent} from 'react';
-
-// class App extends Conponent {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <h1>Hello</h1>
-//       </React.Fragment>
-//     )
-//   }
-// }
 
 function App() {
+  const profiles = [
+    {
+      name: "Taro", age: 10
+    },
+    {
+      name: "Hanako", age: 5
+    },
+    {
+      name: "NoName"
+    }
+  ]
   return (
     <div>
-      <Dog />
-      <Dog />
-      <Dog />
-      <Dog />
+      {
+        profiles.map((profile, index) => {
+          return < User name={profile.name} age={profile.age} key={index} />
+        })
+      }
     </div>
   );
 }
 
-function Dog() {
-  return <div>Won!</div>
+function User(props) {
+  return <div>Hi! I am {props.name}, and {props.age} years old!</div>
+}
+
+User.defaultProps = {
+  age: 1
 }
 
 export default App;
