@@ -2,7 +2,10 @@ import React from 'react';
 
 function App() {
   return (
-    <div className="App"><h1>Hello, world!</h1></div>
+    <div>
+      <label htmlFor="bar">bar : </label>
+      <input id="bar" type="text" onClick={() => { console.log("I am Clicked") }} />
+    </div>
   );
 }
 
